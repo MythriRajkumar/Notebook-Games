@@ -1,0 +1,306 @@
+/* Base styles and resets */
+* {
+    font-family: "Handlee", cursive;
+    font-style: normal;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background: url('/static/images/bg.png') no-repeat center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 100vh;
+}
+
+/* Navbar - Compact */
+.navbar {
+    background-color: #6f3838;
+    color: white;
+    padding: 0.7rem; /* Reduced vertical padding */
+    text-align: center;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.5rem; /* Reduced gap between items */
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 0.25rem 1rem; /* Reduced vertical padding */
+    white-space: nowrap;
+    font-size: 0.9rem; /* Slightly smaller font */
+    line-height: 1.2; /* Tighter line height */
+}
+
+.navbar a:hover {
+    text-decoration: underline;
+}
+
+/* Main Content */
+.main-content {
+    text-align: center;
+    padding: 1rem;
+    margin-top: 4.8rem;
+}
+
+h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: black;
+    font-weight: 200;
+}
+
+/* Hangman Container Layout */
+.hangman-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* Sidebar Styles */
+.col1 {
+    position: fixed;
+    left: 6rem;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+}
+
+.sidebar {
+    padding: 1rem;
+    min-width: 150px;
+}
+
+.sidebar h2 {
+    color: black;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 29px 0px;
+}
+
+.sidebar li {
+    margin-bottom: 1rem;
+}
+
+.sidebar a {
+    text-decoration: none;
+    color: black;
+    font-weight: 200;
+    transition: color 0.3s;
+}
+
+.sidebar a:hover {
+    color: #0056b3;
+}
+
+/* Game Area Styles */
+.col2 {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+.hangman-figure {
+    margin-bottom: 1rem;
+}
+
+.hangman-figure img {
+    max-width: 300px;
+    height: auto;
+    margin-bottom: 1rem;
+}
+
+.status, .hint {
+    font-size: 1.2rem;
+    margin: 0.5rem 0;
+    color: black;
+}
+
+/* Word Display and Keyboard */
+.col3 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 4.3rem;
+}
+
+.word-display {
+    font-size: 2rem;
+    letter-spacing: 10px;
+    margin-bottom: 1.5rem;
+    color: black;
+}
+
+.keyboard {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 0.5rem;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.letter {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    cursor: pointer;
+    color: black;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.letter:hover {
+    background-color: #eee;
+}
+
+.letter.used {
+    background-color: #ddd;
+    cursor: not-allowed;
+    color: #666;
+}
+
+
+/* Buttons */
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.buttons button {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    background-color: #33333391;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.buttons button:hover {
+    background-color: #0056b3;
+}
+
+/* Media Queries */
+@media screen and (max-width: 1200px) {
+    .hangman-container {
+        gap: 1rem;
+    }
+    
+    .col1 {
+        left: 1rem;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .hangman-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .col1 {
+        position: static;
+        transform: none;
+        margin-bottom: 1rem;
+    }
+
+    .sidebar ul {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .sidebar li {
+        margin-bottom: 0;
+    }
+
+    .col2 {
+        padding: 0;
+    }
+
+    .hangman-figure img {
+        max-width: 250px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .keyboard {
+        grid-template-columns: repeat(6, 1fr);
+        max-width: 300px;
+    }
+
+    .letter {
+        width: 35px;
+        height: 35px;
+        font-size: 1rem;
+    }
+
+    .word-display {
+        font-size: 1.5rem;
+        letter-spacing: 8px;
+    }
+
+    .hangman-figure img {
+        max-width: 200px;
+    }
+
+    .buttons {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .keyboard {
+        grid-template-columns: repeat(5, 1fr);
+        gap: 0.3rem;
+    }
+
+    .letter {
+        width: 30px;
+        height: 30px;
+        font-size: 0.9rem;
+    }
+
+    .hangman-figure img {
+        max-width: 180px;
+    }
+}

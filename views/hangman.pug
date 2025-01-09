@@ -1,0 +1,49 @@
+doctype html
+html
+  head
+    title Hangman - Notebook Games
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+
+    //- Link to external CSS file
+    link(rel="stylesheet" href="static/styles2.css")
+
+  body
+    .container
+      //- Navigation Bar
+      nav.navbar
+        a(href="/") Home
+        a(href="/tic_tac_toe") Tic Tac Toe
+        a(href="/rock_paper_scissors") Rock Paper Scissors
+        a(href="/hangman") Hangman
+
+      //- Main Content
+      .main-content
+        h1 HANGMAN
+        .hangman-container
+          .col1
+            .sidebar
+              h2 Categories
+                ul
+                  li: a(href="#" onclick="selectCategory('movies')") Movies
+                  li: a(href="#" onclick="selectCategory('sports')") Sports
+                  li: a(href="#" onclick="selectCategory('animals')") Animals
+
+          .col2
+            .hangman-figure
+              img#hangmanImage(src="static/images/H0.png" alt="Hangman Figure")
+            .status#status Status: Guess the word!
+            .hint#hint Hint:
+
+          .col3
+            .word-display#wordDisplay __ __ __ __ __ __
+
+            .keyboard
+              each letter in 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('')
+                button.letter(data-letter=letter)= letter
+
+            .buttons
+              button(onclick="resetGame()") Reset Game
+              button(onclick="window.location.href='/'") End Game
+
+    script(src="static/scripts2.js")

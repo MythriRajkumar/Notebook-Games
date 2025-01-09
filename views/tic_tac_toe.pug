@@ -1,0 +1,42 @@
+doctype html
+html
+  head
+    title Tic Tac Toe - Notebook Games
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+
+    //- Link to external CSS file
+    link(rel="stylesheet" href="static/styles1.css")
+
+  body
+    .container
+      nav.navbar
+        a(href="/") Home
+        a(href="/tic_tac_toe") Tic Tac Toe
+        a(href="/rock_paper_scissors") Rock Paper Scissors
+        a(href="/hangman") Hangman
+
+      //- Main Content
+      .main-content
+        h1 Tic Tac Toe
+        .main-container
+          .col1
+            .sidebar
+              h3 Choose board size:
+              .board-size-links
+                a(href="#" data-size="3") 3x3
+                a(href="#" data-size="4") 4x4
+                a(href="#" data-size="5") 5x5
+          .col2
+            label(for="gameMode") Choose game mode:
+              select#gameMode
+                option(value="twoPlayer") Two Player
+                option(value="computer") Play Against Computer
+            .board
+              .game-board
+            #status Turn: Player X
+            .buttons
+              button#resetButton Reset Game
+              button(onclick="window.location.href='/'") End Game
+
+    script(src="static/scripts1.js")

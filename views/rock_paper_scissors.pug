@@ -1,0 +1,45 @@
+doctype html
+html
+  head
+    title Rock Paper Scissors - Notebook Games
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+
+    //- Link to external CSS file
+    link(rel="stylesheet" href="static/styles3.css") 
+
+  body
+    .container
+      //- Navigation Bar 
+      nav.navbar
+        a(href="/") Home
+        a(href="/tic_tac_toe") Tic Tac Toe
+        a(href="/rock_paper_scissors") Rock Paper Scissors
+        a(href="/hangman") Hangman
+
+      //- Main Content
+      .main-content
+        h1 Rock Paper Scissors
+
+        .game-mode-selection
+          label(for="game-mode") Choose Game Mode:
+          select#game-mode
+            option(value="classic") Classic (Rock, Paper, Scissors)
+            option(value="expanded") Expanded (Rock, Paper, Scissors, Lizard, Spock)
+
+        .rps-container
+          .choices
+            //- Choices dynamically managed via JavaScript
+
+          .results
+            .result-message Make your move!
+            .scoreboard
+              p Player Score: <span id="player-score">0</span>
+              p Computer Score: <span id="computer-score">0</span>
+
+          .buttons
+            button(onclick="resetGame()") Reset Game
+            button(onclick="window.location.href='/'") End Game
+
+    //- Link to external JavaScript file
+    script(src="static/scripts3.js")

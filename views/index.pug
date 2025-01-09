@@ -1,0 +1,24 @@
+doctype html
+html
+    head
+        title Notebook Games
+        style
+            include ../static/style.css
+    body
+        heading
+            h1.h-secondary Notebook Games
+            h2.h-secondary0 Your Hub for Classic Fun and Endless Play!
+        section.container
+            #boxes
+                .box1
+                    a(href="/tic_tac_toe")
+                        img(src="/static/images/ttt.png" alt="Tic Tac Toe")
+                        h2.h-secondary1 tic tac toe:
+                .box2       
+                    a(href="/hangman")
+                        img(src="/static/images/hangman.png" alt="Hangman")
+                        h2.h-secondary2 hangman:
+                .box3
+                    a(href="/rock_paper_scissors")
+                        img(src="/static/images/rock_paper_scissors.png" alt="Rock Paper Scissors")
+                        h2.h-secondary3 rock-paper-scissors:

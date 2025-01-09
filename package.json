@@ -1,0 +1,21 @@
+{
+  "name": "game-central",
+  "version": "1.0.0",
+  "description": "a games website featuring three classic games that bring in childhood nostalgia",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Mythri",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "express": "^4.19.2",
+    "express-session": "^1.18.0",
+    "mongoose": "^8.5.1",
+    "pug": "^3.0.3"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.4"
+  }
+}
